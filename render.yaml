@@ -56,6 +56,12 @@ services:
         value: gemini-1.5-flash
       - key: GEMINI_TIMEOUT
         value: "15"
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GROQ_MODEL
+        value: llama-3.3-70b-versatile
+      - key: GROQ_TIMEOUT
+        value: "15"
 
 databases:
   - name: edukho-db

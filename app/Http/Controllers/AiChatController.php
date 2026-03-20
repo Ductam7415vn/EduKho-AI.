@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\AiChatLog;
-use App\Services\AI\GeminiService;
+use App\Services\AI\AiServiceManager;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class AiChatController extends Controller
 {
     public function __construct(
-        private GeminiService $geminiService
+        private AiServiceManager $aiService
     ) {}
 
     /**
@@ -36,7 +36,7 @@ class AiChatController extends Controller
             'message' => 'required|string|max:1000',
         ]);
 
-        $result = $this->geminiService->processBookingRequest(
+        $result = $this->aiService->processBookingRequest(
             $validated['message'],
             Auth::user()
         );

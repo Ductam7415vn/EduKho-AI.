@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Services\AI\GeminiService;
+use App\Services\AI\AiServiceManager;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 class AiChatApiController extends Controller
 {
     public function __construct(
-        private GeminiService $geminiService
+        private AiServiceManager $aiService
     ) {}
 
     public function chat(Request $request): JsonResponse
@@ -20,7 +20,7 @@ class AiChatApiController extends Controller
             'message' => 'required|string|max:1000',
         ]);
 
-        $result = $this->geminiService->processBookingRequest(
+        $result = $this->aiService->processBookingRequest(
             $validated['message'],
             Auth::user()
         );

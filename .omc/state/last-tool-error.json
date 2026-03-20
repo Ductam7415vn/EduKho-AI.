@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"cd \\\"/home/matcry/Documents/EduKho-AI./\\\" && php -l app/Services/AI/AiServiceManager.php && php -l app/Services/AI/GroqService.php && php -l app/Http/Controllers/AiChatController.php && ph...",
+  "error": "Exit code 127\n/bin/bash: line 1: php: command not found",
+  "timestamp": "2026-03-20T02:47:33.466Z",
+  "retry_count": 1
+}

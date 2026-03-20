@@ -40,4 +40,16 @@ return [
         'timeout' => env('GEMINI_TIMEOUT', 15),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Groq AI Configuration (Fallback khi Gemini không khả dụng)
+    |--------------------------------------------------------------------------
+    | Đăng ký miễn phí tại: https://console.groq.com
+    */
+    'groq' => [
+        'api_key' => env('GROQ_API_KEY'),
+        'model' => env('GROQ_MODEL', 'llama-3.3-70b-versatile'),
+        'timeout' => env('GROQ_TIMEOUT', 15),
+    ],
+
 ];
