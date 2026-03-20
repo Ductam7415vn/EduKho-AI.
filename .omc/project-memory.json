@@ -202,6 +202,30 @@
       "type": "file"
     },
     {
+      "path": "vercel.json",
+      "accessCount": 4,
+      "lastAccessed": 1773977036665,
+      "type": "file"
+    },
+    {
+      "path": "api/index.php",
+      "accessCount": 4,
+      "lastAccessed": 1773978537523,
+      "type": "file"
+    },
+    {
+      "path": "composer.json",
+      "accessCount": 4,
+      "lastAccessed": 1773979073753,
+      "type": "file"
+    },
+    {
+      "path": "Dockerfile",
+      "accessCount": 4,
+      "lastAccessed": 1773987869515,
+      "type": "file"
+    },
+    {
       "path": "config/services.php",
       "accessCount": 3,
       "lastAccessed": 1773974722993,
@@ -220,22 +244,10 @@
       "type": "file"
     },
     {
-      "path": "vercel.json",
+      "path": "database/migrations",
       "accessCount": 3,
-      "lastAccessed": 1773976507242,
-      "type": "file"
-    },
-    {
-      "path": "api/index.php",
-      "accessCount": 3,
-      "lastAccessed": 1773976512003,
-      "type": "file"
-    },
-    {
-      "path": "composer.json",
-      "accessCount": 2,
-      "lastAccessed": 1773974059207,
-      "type": "file"
+      "lastAccessed": 1773978383255,
+      "type": "directory"
     },
     {
       "path": "package.json",
@@ -247,6 +259,18 @@
       "path": "render.yaml",
       "accessCount": 2,
       "lastAccessed": 1773974786303,
+      "type": "file"
+    },
+    {
+      "path": ".env",
+      "accessCount": 2,
+      "lastAccessed": 1773978332465,
+      "type": "file"
+    },
+    {
+      "path": "database/migrations/2025_01_01_000019_create_reservations_table.php",
+      "accessCount": 2,
+      "lastAccessed": 1773978372142,
       "type": "file"
     },
     {
@@ -298,21 +322,9 @@
       "type": "file"
     },
     {
-      "path": "database/migrations",
-      "accessCount": 1,
-      "lastAccessed": 1773974070656,
-      "type": "directory"
-    },
-    {
       "path": "bootstrap/app.php",
       "accessCount": 1,
       "lastAccessed": 1773974085981,
-      "type": "file"
-    },
-    {
-      "path": "Dockerfile",
-      "accessCount": 1,
-      "lastAccessed": 1773974100327,
       "type": "file"
     },
     {
@@ -367,6 +379,12 @@
       "path": "public/index.php",
       "accessCount": 1,
       "lastAccessed": 1773975787046,
+      "type": "file"
+    },
+    {
+      "path": "fly.toml",
+      "accessCount": 1,
+      "lastAccessed": 1773979504714,
       "type": "file"
     }
   ],
