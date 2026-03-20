@@ -15,11 +15,16 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
     && apt-get install -y nodejs
 
-# Configure Apache
+# Configure Apache document root and enable AllowOverride for .htaccess
 ENV APACHE_DOCUMENT_ROOT=/var/www/html/public
 RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
 RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
+RUN sed -ri -e 's!AllowOverride None!AllowOverride All!g' /etc/apache2/apache2.conf
 RUN a2enmod rewrite headers
+
+# Render uses port 10000 by default
+RUN sed -i 's/Listen 80/Listen 10000/' /etc/apache2/ports.conf
+RUN sed -i 's/:80/:10000/' /etc/apache2/sites-available/000-default.conf
 
 # Set working directory
 WORKDIR /var/www/html
@@ -54,10 +59,6 @@ php artisan migrate --force\n\
 apache2-foreground' > /usr/local/bin/start.sh \
     && chmod +x /usr/local/bin/start.sh
 
-# Configure Apache to listen on port 8080 (Fly.io requirement)
-RUN sed -i 's/Listen 80/Listen 8080/' /etc/apache2/ports.conf
-RUN sed -i 's/:80/:8080/' /etc/apache2/sites-available/000-default.conf
-
-EXPOSE 8080
+EXPOSE 10000
 
 CMD ["/usr/local/bin/start.sh"]

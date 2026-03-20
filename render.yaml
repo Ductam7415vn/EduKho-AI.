@@ -19,29 +19,21 @@ services:
       - key: APP_FALLBACK_LOCALE
         value: en
       - key: APP_KEY
-        generateValue: true
+        sync: false
+      - key: APP_URL
+        sync: false
       - key: DB_CONNECTION
         value: pgsql
       - key: DB_HOST
-        fromDatabase:
-          name: edukho-db
-          property: host
+        sync: false
       - key: DB_PORT
-        fromDatabase:
-          name: edukho-db
-          property: port
+        value: "5432"
       - key: DB_DATABASE
-        fromDatabase:
-          name: edukho-db
-          property: database
+        sync: false
       - key: DB_USERNAME
-        fromDatabase:
-          name: edukho-db
-          property: user
+        sync: false
       - key: DB_PASSWORD
-        fromDatabase:
-          name: edukho-db
-          property: password
+        sync: false
       - key: SESSION_DRIVER
         value: database
       - key: CACHE_STORE
@@ -54,17 +46,7 @@ services:
         sync: false
       - key: GEMINI_MODEL
         value: gemini-1.5-flash
-      - key: GEMINI_TIMEOUT
-        value: "15"
       - key: GROQ_API_KEY
         sync: false
       - key: GROQ_MODEL
         value: llama-3.3-70b-versatile
-      - key: GROQ_TIMEOUT
-        value: "15"
-
-databases:
-  - name: edukho-db
-    plan: free
-    databaseName: equipment_management
-    region: singapore
