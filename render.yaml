@@ -25,15 +25,25 @@ services:
       - key: DB_CONNECTION
         value: pgsql
       - key: DB_HOST
-        sync: false
+        fromDatabase:
+          name: edukho-db
+          property: host
       - key: DB_PORT
-        value: "5432"
+        fromDatabase:
+          name: edukho-db
+          property: port
       - key: DB_DATABASE
-        sync: false
+        fromDatabase:
+          name: edukho-db
+          property: database
       - key: DB_USERNAME
-        sync: false
+        fromDatabase:
+          name: edukho-db
+          property: user
       - key: DB_PASSWORD
-        sync: false
+        fromDatabase:
+          name: edukho-db
+          property: password
       - key: SESSION_DRIVER
         value: database
       - key: CACHE_STORE
@@ -50,3 +60,9 @@ services:
         sync: false
       - key: GROQ_MODEL
         value: llama-3.3-70b-versatile
+
+databases:
+  - name: edukho-db
+    plan: free
+    databaseName: equipment_management
+    region: singapore
