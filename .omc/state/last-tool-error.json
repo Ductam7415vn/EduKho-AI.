@@ -1,7 +1,7 @@
 {
-  "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"cd \\\"/home/matcry/Documents/EduKho-AI./\\\" && php -l app/Services/AI/AiServiceManager.php && php -l app/Services/AI/GroqService.php && php -l app/Http/Controllers/AiChatController.php && ph...",
-  "error": "Exit code 127\n/bin/bash: line 1: php: command not found",
-  "timestamp": "2026-03-20T02:47:33.466Z",
+  "tool_name": "Read",
+  "tool_input_preview": "{\"file_path\":\"/home/matcry/Documents/EduKho-AI./config/view.php\"}",
+  "error": "File does not exist. Note: your current working directory is /home/matcry/Documents/EduKho-AI..",
+  "timestamp": "2026-03-20T03:03:24.523Z",
   "retry_count": 1
 }

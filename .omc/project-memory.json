@@ -220,6 +220,18 @@
       "type": "file"
     },
     {
+      "path": "vercel.json",
+      "accessCount": 3,
+      "lastAccessed": 1773976507242,
+      "type": "file"
+    },
+    {
+      "path": "api/index.php",
+      "accessCount": 3,
+      "lastAccessed": 1773976512003,
+      "type": "file"
+    },
+    {
       "path": "composer.json",
       "accessCount": 2,
       "lastAccessed": 1773974059207,
@@ -350,6 +362,12 @@
       "accessCount": 1,
       "lastAccessed": 1773974770665,
       "type": "directory"
+    },
+    {
+      "path": "public/index.php",
+      "accessCount": 1,
+      "lastAccessed": 1773975787046,
+      "type": "file"
     }
   ],
   "userDirectives": []
