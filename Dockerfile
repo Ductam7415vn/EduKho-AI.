@@ -39,12 +39,14 @@ COPY --chown=devuser:devuser . /var/www
 # Install dependencies
 RUN composer install --optimize-autoloader --no-dev
 
+# Copy .env.example to .env for build process
+RUN cp .env.example .env
+
 # Generate key
 RUN php artisan key:generate
 
-# Optimize Laravel
-RUN php artisan config:cache && \
-    php artisan route:cache && \
+# Optimize Laravel (skip config:cache as it needs proper .env)
+RUN php artisan route:cache && \
     php artisan view:cache
 
 # Copy nginx config
