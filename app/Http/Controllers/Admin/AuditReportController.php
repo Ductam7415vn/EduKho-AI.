@@ -382,12 +382,18 @@ class AuditReportController extends Controller
     private function buildMonthlyTrend($fromDate, $toDate)
     {
         $driver = DB::connection()->getDriverName();
-        $monthExpr = $driver === 'sqlite'
-            ? "CAST(strftime('%m', borrow_date) AS INTEGER)"
-            : 'MONTH(borrow_date)';
-        $yearExpr = $driver === 'sqlite'
-            ? "CAST(strftime('%Y', borrow_date) AS INTEGER)"
-            : 'YEAR(borrow_date)';
+        
+        if ($driver === 'sqlite') {
+            $monthExpr = "CAST(strftime('%m', borrow_date) AS INTEGER)";
+            $yearExpr = "CAST(strftime('%Y', borrow_date) AS INTEGER)";
+        } elseif ($driver === 'pgsql') {
+            $monthExpr = "EXTRACT(MONTH FROM borrow_date)";
+            $yearExpr = "EXTRACT(YEAR FROM borrow_date)";
+        } else {
+            // MySQL
+            $monthExpr = 'MONTH(borrow_date)';
+            $yearExpr = 'YEAR(borrow_date)';
+        }
 
         return BorrowRecord::whereBetween('borrow_date', [$fromDate, $toDate])
             ->selectRaw("{$yearExpr} as year, {$monthExpr} as month, COUNT(*) as count")

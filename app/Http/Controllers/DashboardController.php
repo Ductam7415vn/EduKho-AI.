@@ -127,12 +127,18 @@ class DashboardController extends Controller
     private function getMonthlyBorrowStats($query)
     {
         $driver = DB::connection()->getDriverName();
-        $monthExpr = $driver === 'sqlite'
-            ? "CAST(strftime('%m', borrow_date) AS INTEGER)"
-            : 'MONTH(borrow_date)';
-        $yearExpr = $driver === 'sqlite'
-            ? "CAST(strftime('%Y', borrow_date) AS INTEGER)"
-            : 'YEAR(borrow_date)';
+        
+        if ($driver === 'sqlite') {
+            $monthExpr = "CAST(strftime('%m', borrow_date) AS INTEGER)";
+            $yearExpr = "CAST(strftime('%Y', borrow_date) AS INTEGER)";
+        } elseif ($driver === 'pgsql') {
+            $monthExpr = "EXTRACT(MONTH FROM borrow_date)";
+            $yearExpr = "EXTRACT(YEAR FROM borrow_date)";
+        } else {
+            // MySQL
+            $monthExpr = 'MONTH(borrow_date)';
+            $yearExpr = 'YEAR(borrow_date)';
+        }
 
         return $query
             ->select(
