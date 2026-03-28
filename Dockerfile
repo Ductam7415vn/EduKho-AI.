@@ -46,12 +46,13 @@ RUN cp .env.example .env
 # Generate key
 RUN php artisan key:generate
 
-# Create necessary directories
-RUN mkdir -p storage/framework/views
+# Create all necessary directories
+RUN mkdir -p storage/framework/{sessions,views,cache,testing} && \
+    mkdir -p storage/logs && \
+    mkdir -p bootstrap/cache
 
-# Optimize Laravel (skip config:cache as it needs proper .env)
-RUN php artisan route:cache && \
-    php artisan view:cache || true
+# Optimize Laravel (only route cache, skip view cache)
+RUN php artisan route:cache
 
 # Copy nginx config
 COPY docker/nginx/render.conf /etc/nginx/sites-available/default
