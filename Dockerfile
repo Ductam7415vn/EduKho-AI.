@@ -74,5 +74,7 @@ RUN mkdir -p /var/www/storage/logs && \
 # Expose port 10000 for Render
 EXPOSE 10000
 
-# Start supervisor
-CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
+# Fix permissions before starting
+CMD chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache && \
+    chmod -R 777 /var/www/storage /var/www/bootstrap/cache && \
+    /usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf
