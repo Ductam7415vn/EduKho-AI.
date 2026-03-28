@@ -62,10 +62,14 @@ COPY docker/supervisor/render.conf /etc/supervisor/conf.d/supervisord.conf
 
 # Create necessary directories and set permissions
 RUN mkdir -p /var/www/storage/logs && \
-    chmod -R 775 /var/www/storage && \
-    chmod -R 775 /var/www/bootstrap/cache && \
-    chown -R devuser:www-data /var/www/storage && \
-    chown -R devuser:www-data /var/www/bootstrap/cache
+    mkdir -p /var/www/storage/framework/cache && \
+    mkdir -p /var/www/storage/framework/sessions && \
+    mkdir -p /var/www/storage/framework/views && \
+    mkdir -p /var/www/bootstrap/cache && \
+    chmod -R 777 /var/www/storage && \
+    chmod -R 777 /var/www/bootstrap/cache && \
+    chown -R www-data:www-data /var/www/storage && \
+    chown -R www-data:www-data /var/www/bootstrap/cache
 
 # Expose port 10000 for Render
 EXPOSE 10000

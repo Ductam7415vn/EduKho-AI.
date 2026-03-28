@@ -28,13 +28,17 @@ php artisan view:cache
 # Create necessary directories
 echo "📁 Creating storage directories..."
 mkdir -p storage/app/public
-mkdir -p storage/framework/{cache,sessions,testing,views}
+mkdir -p storage/framework/cache
+mkdir -p storage/framework/sessions
+mkdir -p storage/framework/testing
+mkdir -p storage/framework/views
 mkdir -p storage/logs
 mkdir -p bootstrap/cache
 
 # Set permissions
 echo "🔒 Setting permissions..."
-chmod -R 775 storage bootstrap/cache
+chmod -R 777 storage bootstrap/cache
+chown -R www-data:www-data storage bootstrap/cache || true
 
 # Create storage symlink
 echo "🔗 Creating storage symlink..."
