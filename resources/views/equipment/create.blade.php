@@ -16,7 +16,7 @@
     </section>
 
     <section class="card animate-fade-in-up" style="animation-delay: 80ms;">
-        <form action="{{ route('admin.equipment.store') }}" method="POST" class="card-body space-y-6">
+        <form action="{{ route('admin.equipment.store') }}" method="POST" enctype="multipart/form-data" class="card-body space-y-6">
             @csrf
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div class="md:col-span-2">
@@ -80,6 +80,14 @@
                 <textarea name="description" rows="3" class="form-input">{{ old('description') }}</textarea>
             </div>
 
+            <div>
+                <label class="form-label">{{ __('messages.equipment.image') }}</label>
+                <input type="file" name="image" class="form-input" accept="image/*" onchange="previewImage(event)">
+                @error('image')<p class="mt-1 text-sm text-red-600">{{ $message }}</p>@enderror
+                <p class="mt-1 text-sm text-gray-500">{{ __('messages.equipment.image_hint') }}</p>
+                <div id="imagePreview" class="mt-2"></div>
+            </div>
+
             <div class="pt-6 border-t border-gray-200 dark:border-gray-700 space-y-4">
                 <div>
                     <h3 class="font-display text-lg font-semibold text-inherit">{{ __('messages.equipment.initial_import') }}</h3>
@@ -110,3 +118,24 @@
     </section>
 </div>
 @endsection
+
+@push('scripts')
+<script>
+function previewImage(event) {
+    const preview = document.getElementById('imagePreview');
+    preview.innerHTML = '';
+    
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const img = document.createElement('img');
+            img.src = e.target.result;
+            img.className = 'w-full max-w-md rounded-lg shadow-lg';
+            preview.appendChild(img);
+        }
+        reader.readAsDataURL(file);
+    }
+}
+</script>
+@endpush

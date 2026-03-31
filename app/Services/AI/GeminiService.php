@@ -31,7 +31,7 @@ class GeminiService implements LlmServiceInterface
     {
         $this->apiKey = config('services.gemini.api_key');
         $this->model = config('services.gemini.model', 'gemini-1.5-flash');
-        $this->baseUrl = 'https://generativelanguage.googleapis.com/v1beta';
+        $this->baseUrl = 'https://generativelanguage.googleapis.com/v1';
         $this->timeoutSeconds = config('services.gemini.timeout', 15);
     }
 
@@ -126,34 +126,55 @@ class GeminiService implements LlmServiceInterface
     {
         $url = "{$this->baseUrl}/models/{$this->model}:generateContent?key={$this->apiKey}";
 
-        $response = Http::timeout($this->timeoutSeconds)
-            ->post($url, [
-                'system_instruction' => [
-                    'parts' => [['text' => $systemPrompt]]
-                ],
-                'contents' => [
-                    [
-                        'role' => 'user',
-                        'parts' => [['text' => $userMessage]]
+        // Debug: Log the request
+        $requestData = [
+            'system_instruction' => [
+                'parts' => [
+                    'text' => $systemPrompt
+                ]
+            ],
+            'contents' => [
+                [
+                    'parts' => [
+                        [
+                            'text' => $userMessage
+                        ]
                     ]
-                ],
-                'generationConfig' => [
-                    'temperature' => 0.1,       // Rất thấp → ít sáng tạo, nhiều chính xác
-                    'topP' => 0.8,
-                    'maxOutputTokens' => 1024,
-                    'responseMimeType' => 'application/json', // Bắt buộc trả JSON
-                ],
-                'safetySettings' => [
-                    ['category' => 'HARM_CATEGORY_HARASSMENT', 'threshold' => 'BLOCK_MEDIUM_AND_ABOVE'],
-                    ['category' => 'HARM_CATEGORY_HATE_SPEECH', 'threshold' => 'BLOCK_MEDIUM_AND_ABOVE'],
-                    ['category' => 'HARM_CATEGORY_SEXUALLY_EXPLICIT', 'threshold' => 'BLOCK_MEDIUM_AND_ABOVE'],
-                    ['category' => 'HARM_CATEGORY_DANGEROUS_CONTENT', 'threshold' => 'BLOCK_MEDIUM_AND_ABOVE'],
-                ],
-            ]);
+                ]
+            ],
+            'generationConfig' => [
+                'temperature' => 0.1,
+                'topP' => 0.8,
+                'maxOutputTokens' => 1024,
+                'responseMimeType' => 'application/json',
+            ],
+            'safetySettings' => [
+                ['category' => 'HARM_CATEGORY_HARASSMENT', 'threshold' => 'BLOCK_MEDIUM_AND_ABOVE'],
+                ['category' => 'HARM_CATEGORY_HATE_SPEECH', 'threshold' => 'BLOCK_MEDIUM_AND_ABOVE'],
+                ['category' => 'HARM_CATEGORY_SEXUALLY_EXPLICIT', 'threshold' => 'BLOCK_MEDIUM_AND_ABOVE'],
+                ['category' => 'HARM_CATEGORY_DANGEROUS_CONTENT', 'threshold' => 'BLOCK_MEDIUM_AND_ABOVE'],
+            ],
+        ];
+
+        Log::info('Gemini API Request', [
+            'url' => $url,
+            'user_message' => $userMessage,
+            'system_prompt_length' => strlen($systemPrompt),
+        ]);
+
+        $response = Http::timeout($this->timeoutSeconds)
+            ->post($url, $requestData);
 
         $response->throw(); // Throw exception nếu status != 2xx
 
         $data = $response->json();
+
+        // Debug: Log the response
+        Log::info('Gemini API Response', [
+            'status' => $response->status(),
+            'has_candidates' => isset($data['candidates']),
+            'response_length' => strlen($response->body()),
+        ]);
 
         // Trích xuất text từ response Gemini
         $text = $data['candidates'][0]['content']['parts'][0]['text'] ?? null;

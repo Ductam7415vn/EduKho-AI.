@@ -9,6 +9,7 @@ use App\Models\EquipmentItem;
 use App\Models\MaintenanceSchedule;
 use App\Models\Room;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class EquipmentController extends Controller
 {
@@ -86,12 +87,19 @@ class EquipmentController extends Controller
             'is_fixed_asset' => 'boolean',
             'file_url' => 'nullable|url',
             'description' => 'nullable|string',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'initial_quantity' => 'nullable|integer|min:0',
             'room_id' => 'nullable|exists:rooms,id',
         ]);
 
         $validated['is_digital'] = $request->boolean('is_digital');
         $validated['is_fixed_asset'] = $request->boolean('is_fixed_asset');
+
+        // Handle image upload
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('equipment', 'public');
+            $validated['image'] = $imagePath;
+        }
 
         $equipment = Equipment::create($validated);
 
@@ -141,10 +149,22 @@ class EquipmentController extends Controller
             'is_fixed_asset' => 'boolean',
             'file_url' => 'nullable|url',
             'description' => 'nullable|string',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
         $validated['is_digital'] = $request->boolean('is_digital');
         $validated['is_fixed_asset'] = $request->boolean('is_fixed_asset');
+
+        // Handle image upload
+        if ($request->hasFile('image')) {
+            // Delete old image if exists
+            if ($equipment->image && Storage::disk('public')->exists($equipment->image)) {
+                Storage::disk('public')->delete($equipment->image);
+            }
+            
+            $imagePath = $request->file('image')->store('equipment', 'public');
+            $validated['image'] = $imagePath;
+        }
 
         $equipment->update($validated);
 

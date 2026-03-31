@@ -23,7 +23,8 @@
             <a href="{{ route('borrow.create', ['equipment' => $equipment->id]) }}" class="btn-primary">{{ __('messages.equipment.register_borrow') }}</a>
             @endif
             <a href="{{ route('equipment.history', $equipment) }}" class="btn-secondary">{{ __('messages.equipment.view_history') }}</a>
-            @if(auth()->user()->isAdmin())
+            @if(auth()->user()->canManageEquipment())
+            <a href="{{ route('equipment.qr.print', $equipment) }}" class="btn-secondary">{{ __('messages.equipment.print_qr') }}</a>
             <a href="{{ route('admin.equipment.edit', $equipment) }}" class="btn-secondary">{{ __('messages.edit') }}</a>
             @endif
         </div>
@@ -31,6 +32,12 @@
 
     <section class="grid grid-cols-1 lg:grid-cols-3 gap-6 animate-fade-in-up" style="animation-delay: 80ms;">
         <div class="lg:col-span-2 space-y-6">
+            @if($equipment->image_url)
+            <article class="filter-panel">
+                <img src="{{ $equipment->image_url }}" alt="{{ $equipment->name }}" class="w-full rounded-lg shadow-lg">
+            </article>
+            @endif
+            
             <article class="filter-panel">
                 <h3 class="font-display text-lg font-semibold text-inherit mb-4">{{ __('messages.equipment.info') }}</h3>
                 <dl class="grid grid-cols-1 md:grid-cols-2 gap-4">

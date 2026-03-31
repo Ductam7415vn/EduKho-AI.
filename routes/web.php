@@ -9,6 +9,7 @@ use App\Http\Controllers\AiChatController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\PasswordResetController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\BorrowTemplateController;
 use App\Http\Controllers\ExportController;
@@ -39,26 +40,6 @@ use Illuminate\Support\Facades\Route;
 
 // Public routes
 Route::get('/', function () {
-    // TEMPORARY: Initialize database on first visit
-    if (app()->environment('production') && !file_exists(storage_path('app/.migrations_done'))) {
-        try {
-            \Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
-            \Illuminate\Support\Facades\Artisan::call('db:seed', ['--force' => true]);
-            file_put_contents(storage_path('app/.migrations_done'), date('Y-m-d H:i:s'));
-            
-            return response()->json([
-                'status' => 'success',
-                'message' => 'Database initialized successfully! Redirecting to login...',
-                'redirect' => route('login')
-            ]);
-        } catch (\Exception $e) {
-            return response()->json([
-                'status' => 'error',
-                'message' => 'Database initialization failed: ' . $e->getMessage()
-            ], 500);
-        }
-    }
-    
     return redirect()->route('login');
 });
 
@@ -66,6 +47,12 @@ Route::get('/', function () {
 Route::middleware('guest')->group(function () {
     Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
     Route::post('/login', [AuthController::class, 'login'])->middleware('throttle:login');
+
+    // Registration
+    Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+    Route::post('/register', [RegisterController::class, 'register'])->middleware('throttle:register');
+    Route::get('/verify-email', [RegisterController::class, 'verifyEmail'])->name('verification.verify');
+    Route::post('/resend-verification', [RegisterController::class, 'resendVerification'])->name('verification.resend')->middleware('throttle:verification');
 
     // Password reset
     Route::get('/forgot-password', [PasswordResetController::class, 'showForgotForm'])->name('password.request');
@@ -177,11 +164,13 @@ Route::middleware('auth')->group(function () {
         Route::get('/unread-count', [NotificationController::class, 'getUnreadCount'])->name('unread-count');
     });
 
+    // Equipment management routes (Admin + School Leaders)
+    Route::middleware('equipment.manage')->prefix('admin')->name('admin.')->group(function () {
+        Route::resource('equipment', EquipmentController::class)->except(['index', 'show']);
+    });
+
     // Admin routes
     Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
-
-        // Equipment management (full CRUD)
-        Route::resource('equipment', EquipmentController::class)->except(['index', 'show']);
 
         // Room/Warehouse management
         Route::resource('rooms', RoomController::class);

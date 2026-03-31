@@ -24,6 +24,7 @@ return Application::configure(basePath: dirname(__DIR__))
             'auth' => \App\Http\Middleware\Authenticate::class,
             'admin' => \App\Http\Middleware\EnsureUserIsAdmin::class,
             'teacher' => \App\Http\Middleware\EnsureUserIsTeacher::class,
+            'equipment.manage' => \App\Http\Middleware\CanManageEquipment::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

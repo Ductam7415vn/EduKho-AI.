@@ -20,7 +20,7 @@
     </section>
 
     <section class="card animate-fade-in-up" style="animation-delay: 80ms;">
-        <form action="{{ route('admin.equipment.update', $equipment) }}" method="POST" class="card-body space-y-6">
+        <form action="{{ route('admin.equipment.update', $equipment) }}" method="POST" enctype="multipart/form-data" class="card-body space-y-6">
             @csrf
             @method('PUT')
 
@@ -88,6 +88,20 @@
                 <textarea name="description" rows="3" class="form-input">{{ old('description', $equipment->description) }}</textarea>
             </div>
 
+            <div>
+                <label class="form-label">{{ __('messages.equipment.image') }}</label>
+                @if($equipment->image_url)
+                <div class="mb-4">
+                    <p class="text-sm text-gray-600 mb-2">{{ __('messages.equipment.current_image') }}:</p>
+                    <img src="{{ $equipment->image_url }}" alt="{{ $equipment->name }}" class="w-full max-w-md rounded-lg shadow-lg">
+                </div>
+                @endif
+                <input type="file" name="image" class="form-input" accept="image/*" onchange="previewImage(event)">
+                @error('image')<p class="mt-1 text-sm text-red-600">{{ $message }}</p>@enderror
+                <p class="mt-1 text-sm text-gray-500">{{ __('messages.equipment.image_hint') }}</p>
+                <div id="imagePreview" class="mt-2"></div>
+            </div>
+
             <div class="flex flex-wrap justify-end gap-2">
                 <a href="{{ route('equipment.show', $equipment) }}" class="btn-secondary">{{ __('messages.cancel') }}</a>
                 <button type="submit" class="btn-primary">{{ __('messages.equipment.save_changes') }}</button>
@@ -96,3 +110,24 @@
     </section>
 </div>
 @endsection
+
+@push('scripts')
+<script>
+function previewImage(event) {
+    const preview = document.getElementById('imagePreview');
+    preview.innerHTML = '';
+    
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const img = document.createElement('img');
+            img.src = e.target.result;
+            img.className = 'w-full max-w-md rounded-lg shadow-lg';
+            preview.appendChild(img);
+        }
+        reader.readAsDataURL(file);
+    }
+}
+</script>
+@endpush

@@ -16,6 +16,7 @@ class User extends Authenticatable
         'department_id',
         'name',
         'email',
+        'email_verified_at',
         'phone',
         'password',
         'role',
@@ -94,6 +95,22 @@ class User extends Authenticatable
     public function isTeacher(): bool
     {
         return $this->role === 'teacher';
+    }
+
+    /**
+     * Check if user is principal or vice principal
+     */
+    public function isSchoolLeader(): bool
+    {
+        return in_array($this->position, ['Hiệu trưởng', 'Phó Hiệu trưởng']);
+    }
+
+    /**
+     * Check if user can manage equipment (admin or school leaders)
+     */
+    public function canManageEquipment(): bool
+    {
+        return $this->isAdmin() || $this->isSchoolLeader();
     }
 
     /**
@@ -196,6 +213,24 @@ class User extends Authenticatable
     public function inventoryLogs(): HasMany
     {
         return $this->hasMany(InventoryLog::class, 'performed_by');
+    }
+
+    /**
+     * Check if email is verified
+     */
+    public function hasVerifiedEmail(): bool
+    {
+        return !is_null($this->email_verified_at);
+    }
+
+    /**
+     * Mark email as verified
+     */
+    public function markEmailAsVerified(): bool
+    {
+        return $this->forceFill([
+            'email_verified_at' => now(),
+        ])->save();
     }
 
     /**

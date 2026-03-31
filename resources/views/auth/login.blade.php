@@ -474,6 +474,15 @@
         <div class="login-demo">
             <span class="font-semibold">{{ __('messages.login_page.demo_account') }}:</span> admin@truong.edu.vn / password
         </div>
+
+        <div class="mt-6 text-center">
+            <p class="text-sm text-gray-600">
+                Chưa có tài khoản? 
+                <a href="{{ route('register') }}" class="font-medium text-teal-600 hover:text-teal-500">
+                    Đăng ký ngay
+                </a>
+            </p>
+        </div>
     </section>
 </div>
 @endsection

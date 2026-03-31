@@ -30,15 +30,15 @@ class AiServiceManager implements LlmServiceInterface
         $geminiKey = config('services.gemini.api_key');
         $groqKey = config('services.groq.api_key');
 
-        // Xác định provider chính và fallback
-        if (!empty($geminiKey) && $geminiKey !== 'your_gemini_api_key_here') {
-            $this->primary = new GeminiService();
-
-            if (!empty($groqKey) && $groqKey !== 'your_groq_api_key_here') {
-                $this->fallback = new GroqService();
-            }
-        } elseif (!empty($groqKey) && $groqKey !== 'your_groq_api_key_here') {
+        // Ưu tiên Groq làm provider chính
+        if (!empty($groqKey) && $groqKey !== 'your_groq_api_key_here') {
             $this->primary = new GroqService();
+
+            if (!empty($geminiKey) && $geminiKey !== 'your_gemini_api_key_here') {
+                $this->fallback = new GeminiService();
+            }
+        } elseif (!empty($geminiKey) && $geminiKey !== 'your_gemini_api_key_here') {
+            $this->primary = new GeminiService();
         }
     }
 

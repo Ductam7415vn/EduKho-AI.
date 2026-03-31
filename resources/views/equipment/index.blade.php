@@ -57,6 +57,11 @@
     <section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 animate-fade-in-up" style="animation-delay: 140ms;">
         @forelse($equipments as $equipment)
         <article class="card">
+            @if($equipment->image_url)
+            <div class="aspect-w-16 aspect-h-9 bg-gray-100 dark:bg-gray-800">
+                <img src="{{ $equipment->image_url }}" alt="{{ $equipment->name }}" class="w-full h-48 object-cover">
+            </div>
+            @endif
             <div class="p-6">
                 <div class="flex items-start justify-between gap-3">
                     <div>

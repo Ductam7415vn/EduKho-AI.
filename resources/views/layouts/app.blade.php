@@ -35,7 +35,7 @@
                 </div>
             </div>
 
-            <nav class="mt-6 px-3 space-y-1">
+            <nav class="mt-6 px-3 space-y-1 pb-20">
                 <a href="{{ route('dashboard') }}"
                    class="sidebar-nav-item {{ request()->routeIs('dashboard') ? 'active' : '' }}">
                     <div class="p-1.5 rounded-lg bg-gradient-to-br from-sky-500/20 to-teal-500/20 mr-3">
