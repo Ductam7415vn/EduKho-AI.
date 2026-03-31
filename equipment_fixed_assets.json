@@ -1,0 +1,730 @@
+[
+  {
+    "stt": 1,
+    "ten_tai_san": "Nhà bộ môn",
+    "ma_so": "NHBM",
+    "don_vi": "nhà",
+    "don_gia": 7785261000.0,
+    "so_luong": 1.0
+  },
+  {
+    "stt": 2,
+    "ten_tai_san": "Nhà Hiệu bộ",
+    "ma_so": "NHHB",
+    "don_vi": "nhà",
+    "don_gia": 6296817335.0,
+    "so_luong": 1.0
+  },
+  {
+    "stt": 3,
+    "ten_tai_san": "Nhà lớp học 2 tầng",
+    "ma_so": "NHLH",
+    "don_vi": "nhà",
+    "don_gia": 6003472976.0,
+    "so_luong": 1.0
+  },
+  {
+    "stt": 4,
+    "ten_tai_san": "Nhà Nội trú Nam",
+    "ma_so": "NHNTNAM",
+    "don_vi": "nhà",
+    "don_gia": 7514453287.0,
+    "so_luong": 1.0
+  },
+  {
+    "stt": 5,
+    "ten_tai_san": "Nhà Nội trú Nữ",
+    "ma_so": "NHNTNU",
+    "don_vi": "nhà",
+    "don_gia": 7399293132.0,
+    "so_luong": 1.0
+  },
+  {
+    "stt": 6,
+    "ten_tai_san": "Nhà vệ sinh",
+    "ma_so": "NHAVS",
+    "don_vi": "nhà",
+    "don_gia": 3600460970.0,
+    "so_luong": 1.0
+  },
+  {
+    "stt": 7,
+    "ten_tai_san": "Nhà bếp ăn",
+    "ma_so": "NHBA",
+    "don_vi": "nhà",
+    "don_gia": 2251420847.0,
+    "so_luong": 1.0
+  },
+  {
+    "stt": 8,
+    "ten_tai_san": "Cống, kè, sân đường bê tông, nhà bảo vệ, gara để xe",
+    "ma_so": "KVK",
+    "don_vi": "công trình",
+    "don_gia": 4797618344.0,
+    "so_luong": 1.0
+  },
+  {
+    "stt": 9,
+    "ten_tai_san": "Máy tính để bàn gv (2011)",
+    "ma_so": "MTĐB",
+    "don_vi": "bộ",
+    "don_gia": 11480000.0,
+    "so_luong": 1.0
+  },
+  {
+    "stt": 10,
+    "ten_tai_san": "Máy tính để bàn hs (2011)",
+    "ma_so": "MTĐBHS",
+    "don_vi": "bộ",
+    "don_gia": 192520000.0,
+    "so_luong": 20.0
+  },
+  {
+    "stt": 11,
+    "ten_tai_san": "Laptop Cori3 (2014)",
+    "ma_so": "LT",
+    "don_vi": "cái",
+    "don_gia": 12800000.0,
+    "so_luong": 1.0
+  },
+  {
+    "stt": 12,
+    "ten_tai_san": "Máy tính để bàn dùng cho gv - 2013 (phòng HT)",
+    "ma_so": "MT",
+    "don_vi": "bộ",
+    "don_gia": 11550000.0,
+    "so_luong": 1.0
+  },
+  {
+    "stt": 13,
+    "ten_tai_san": "Máy tính xách tay (2010)",
+    "ma_so": "MTXT",
+    "don_vi": "cái",
+    "don_gia": 14983000.0,
+    "so_luong": 1.0
+  },
+  {
+    "stt": 14,
+    "ten_tai_san": "Bàn ghế ngồi làm viêc (2010)",
+    "ma_so": "",
+    "don_vi": "bộ",
+    "don_gia": 3190000.0,
+    "so_luong": 2.0
+  },
+  {
+    "stt": 15,
+    "ten_tai_san": "Bàn ghế GV-2010",
+    "ma_so": "BG",
+    "don_vi": "bộ",
+    "don_gia": 29700000.0,
+    "so_luong": 2.0
+  },
+  {
+    "stt": 16,
+    "ten_tai_san": "Bàn ghế GV-2014",
+    "ma_so": "BG GV1",
+    "don_vi": "",
+    "don_gia": 8825000.0,
+    "so_luong": 5.0
+  },
+  {
+    "stt": 17,
+    "ten_tai_san": "Bàn ghế GV 2013",
+    "ma_so": "BGGV",
+    "don_vi": "",
+    "don_gia": 9150000.0,
+    "so_luong": 5.0
+  },
+  {
+    "stt": 18,
+    "ten_tai_san": "Bàn ghế GV-2011",
+    "ma_so": "BG GV2",
+    "don_vi": "",
+    "don_gia": 2405645.0,
+    "so_luong": 2.0
+  },
+  {
+    "stt": 19,
+    "ten_tai_san": "Ghế gấp hòa phát 1/2012",
+    "ma_so": "BGGV3",
+    "don_vi": "cái",
+    "don_gia": 144550000.0,
+    "so_luong": 35.0
+  },
+  {
+    "stt": 20,
+    "ten_tai_san": "Ghế gấp xuân hòa  1/2011",
+    "ma_so": "GHG",
+    "don_vi": "cái",
+    "don_gia": 5040000.0,
+    "so_luong": 20.0
+  },
+  {
+    "stt": 21,
+    "ten_tai_san": "Bàn ghế 4 chỗ hs-2010",
+    "ma_so": "BG HS",
+    "don_vi": "bộ",
+    "don_gia": 267300000.0,
+    "so_luong": 18.0
+  },
+  {
+    "stt": 22,
+    "ten_tai_san": "Bàn ghế 4 chỗ hs-2011",
+    "ma_so": "BG HS2",
+    "don_vi": "bộ",
+    "don_gia": 34782732.0,
+    "so_luong": 18.0
+  },
+  {
+    "stt": 23,
+    "ten_tai_san": "Bàn ghế 4 chỗ hs-2012",
+    "ma_so": "BG HS4",
+    "don_vi": "bộ",
+    "don_gia": 2970000.0,
+    "so_luong": 2.0
+  },
+  {
+    "stt": 24,
+    "ten_tai_san": "Bàn ghế HS 2 chỗ- 2013",
+    "ma_so": "BGHS3",
+    "don_vi": "bộ",
+    "don_gia": 131040000.0,
+    "so_luong": 78.0
+  },
+  {
+    "stt": 25,
+    "ten_tai_san": "Bàn ghế hs 2 chỗ-2014",
+    "ma_so": "BGHS2",
+    "don_vi": "bộ",
+    "don_gia": 177120000.0,
+    "so_luong": 108.0
+  },
+  {
+    "stt": 26,
+    "ten_tai_san": "Bàn ghế hs 2 chỗ-2014",
+    "ma_so": "BGHS4",
+    "don_vi": "bộ",
+    "don_gia": 29520000.0,
+    "so_luong": 18.0
+  },
+  {
+    "stt": 27,
+    "ten_tai_san": "Bàn ghế HS 2 chỗ- 2020",
+    "ma_so": "BGHS2",
+    "don_vi": "bộ",
+    "don_gia": 84832000.0,
+    "so_luong": 44.0
+  },
+  {
+    "stt": 28,
+    "ten_tai_san": "Bàn ghế HSTHPT loại 2 chỗ- 2022",
+    "ma_so": "",
+    "don_vi": "bộ",
+    "don_gia": "",
+    "so_luong": 84.0
+  },
+  {
+    "stt": 29,
+    "ten_tai_san": "Bàn ghế GV- 2022",
+    "ma_so": "BGGV",
+    "don_vi": "bộ",
+    "don_gia": "",
+    "so_luong": 8.0
+  },
+  {
+    "stt": 30,
+    "ten_tai_san": "Bàn ghế HS lớp 6 loại 2 chỗ- 2022",
+    "ma_so": "",
+    "don_vi": "bộ",
+    "don_gia": "",
+    "so_luong": 36.0
+  },
+  {
+    "stt": 31,
+    "ten_tai_san": "Bàn ghế Phòng Tin học 1+2 loại 2 chỗ",
+    "ma_so": "",
+    "don_vi": "bộ",
+    "don_gia": "",
+    "so_luong": 36.0
+  },
+  {
+    "stt": 32,
+    "ten_tai_san": "Phòng Hoá học + Vật lí+ Sinh học loại Bàn HS làm thí nghiệm",
+    "ma_so": "",
+    "don_vi": "bộ",
+    "don_gia": "",
+    "so_luong": 21.0
+  },
+  {
+    "stt": 33,
+    "ten_tai_san": "Phòng Hoá học + Vật lí+ Sinh học loại ghế Inox",
+    "ma_so": "",
+    "don_vi": "bộ",
+    "don_gia": "",
+    "so_luong": 125.0
+  },
+  {
+    "stt": 34,
+    "ten_tai_san": "Phòng Ngoại ngữ 1",
+    "ma_so": "",
+    "don_vi": "bộ",
+    "don_gia": "",
+    "so_luong": 18.0
+  },
+  {
+    "stt": 35,
+    "ten_tai_san": "Bàn ghế hs THPT-2013",
+    "ma_so": "BGTHPT",
+    "don_vi": "bộ",
+    "don_gia": 83652294.0,
+    "so_luong": 66.0
+  },
+  {
+    "stt": 36,
+    "ten_tai_san": "Bàn để máy tính hs-2011",
+    "ma_so": "BMT",
+    "don_vi": "cái",
+    "don_gia": 12200000.0,
+    "so_luong": 10.0
+  },
+  {
+    "stt": 37,
+    "ten_tai_san": "Bàn chia thức ăn hs-2010",
+    "ma_so": "B",
+    "don_vi": "cái",
+    "don_gia": 5060000.0,
+    "so_luong": 2.0
+  },
+  {
+    "stt": 38,
+    "ten_tai_san": "Bàn chia thức ăn hs-2020",
+    "ma_so": "B",
+    "don_vi": "Cái",
+    "don_gia": "",
+    "so_luong": 2.0
+  },
+  {
+    "stt": 39,
+    "ten_tai_san": "Bàn cho học sinh - 2020",
+    "ma_so": "BCP",
+    "don_vi": "cái",
+    "don_gia": "",
+    "so_luong": 18.0
+  },
+  {
+    "stt": 40,
+    "ten_tai_san": "Bàn để máy tính học sinh",
+    "ma_so": "BMT",
+    "don_vi": "Cái",
+    "don_gia": "",
+    "so_luong": 10.0
+  },
+  {
+    "stt": 41,
+    "ten_tai_san": "Bảng chống lóa-2010-2C",
+    "ma_so": "BCL",
+    "don_vi": "cái",
+    "don_gia": 5720000.0,
+    "so_luong": 19.0
+  },
+  {
+    "stt": 42,
+    "ten_tai_san": "Bảng chống lóa-2014-4C",
+    "ma_so": "BCL1",
+    "don_vi": "cái",
+    "don_gia": 12800000.0,
+    "so_luong": ""
+  },
+  {
+    "stt": 43,
+    "ten_tai_san": "Bảng chống lóa-2021- 5C",
+    "ma_so": "BCL",
+    "don_vi": "cái",
+    "don_gia": 16500000.0,
+    "so_luong": ""
+  },
+  {
+    "stt": 44,
+    "ten_tai_san": "Bảng chống lóa-2013-8C",
+    "ma_so": "BCL2",
+    "don_vi": "cái",
+    "don_gia": 24800000.0,
+    "so_luong": ""
+  },
+  {
+    "stt": 45,
+    "ten_tai_san": "Bàn ăn cho hs-2013",
+    "ma_so": "BCP",
+    "don_vi": "Bộ",
+    "don_gia": 30420000.0,
+    "so_luong": 18.0
+  },
+  {
+    "stt": 46,
+    "ten_tai_san": "Bàn ghế ăn HS 2013",
+    "ma_so": "BGA",
+    "don_vi": "Bộ",
+    "don_gia": 77000000.0,
+    "so_luong": 20.0
+  },
+  {
+    "stt": 47,
+    "ten_tai_san": "Bàn ghế ăn hs-2010",
+    "ma_so": "BGH",
+    "don_vi": "bộ",
+    "don_gia": 31680000.0,
+    "so_luong": 9.0
+  },
+  {
+    "stt": 48,
+    "ten_tai_san": "Bàn ghế ăn hs Inox loaị 6 HS-2014",
+    "ma_so": "BGA",
+    "don_vi": "cái",
+    "don_gia": 58200000.0,
+    "so_luong": 15.0
+  },
+  {
+    "stt": 49,
+    "ten_tai_san": "Giường I Nox 2 tầng-2010",
+    "ma_so": "GIN",
+    "don_vi": "cái",
+    "don_gia": 138600000.0,
+    "so_luong": 35.0
+  },
+  {
+    "stt": 50,
+    "ten_tai_san": "Giường I Nox 2 tầng-2012",
+    "ma_so": "GIN3",
+    "don_vi": "cái",
+    "don_gia": "37,836,000",
+    "so_luong": 18.0
+  },
+  {
+    "stt": 51,
+    "ten_tai_san": "Giường I Nox 2 tầng-2011",
+    "ma_so": "GIN1",
+    "don_vi": "cái",
+    "don_gia": "135,090,000",
+    "so_luong": 35.0
+  },
+  {
+    "stt": 52,
+    "ten_tai_san": "Giường I Nox 2 tầng-2014",
+    "ma_so": "GIN2",
+    "don_vi": "cái",
+    "don_gia": "157,150,000",
+    "so_luong": 35.0
+  },
+  {
+    "stt": 53,
+    "ten_tai_san": "Giường I Nox 2 tầng-2013",
+    "ma_so": "GIN4",
+    "don_vi": "cái",
+    "don_gia": "156,100,000",
+    "so_luong": 35.0
+  },
+  {
+    "stt": 54,
+    "ten_tai_san": "Giường sắt",
+    "ma_so": "",
+    "don_vi": "cái",
+    "don_gia": "",
+    "so_luong": 57.0
+  },
+  {
+    "stt": 55,
+    "ten_tai_san": "Nồi hơi-2015",
+    "ma_so": "NH",
+    "don_vi": "bộ",
+    "don_gia": 223000000.0,
+    "so_luong": 1.0
+  },
+  {
+    "stt": 56,
+    "ten_tai_san": "Tủ đựng thức ăn-2010 (gỗ)",
+    "ma_so": "TĐTA",
+    "don_vi": "cái",
+    "don_gia": 39160000.0,
+    "so_luong": 1.0
+  },
+  {
+    "stt": 57,
+    "ten_tai_san": "Tủ đựng tài liệu cá nhân-2010 (Sắt)",
+    "ma_so": "TĐTL",
+    "don_vi": "cái",
+    "don_gia": 72380000.0,
+    "so_luong": 14.0
+  },
+  {
+    "stt": 58,
+    "ten_tai_san": "Tủ thuốc phòng Y tế-2010TH",
+    "ma_so": "TH",
+    "don_vi": "cái",
+    "don_gia": 2970000.0,
+    "so_luong": 1.0
+  },
+  {
+    "stt": 59,
+    "ten_tai_san": "Bộ máy chiếu đa năng-2014 (lớp 6A)",
+    "ma_so": "BMCĐN",
+    "don_vi": "bộ",
+    "don_gia": 24950000.0,
+    "so_luong": 1.0
+  },
+  {
+    "stt": 60,
+    "ten_tai_san": "Máy chiếu đa năng-2013 (Phòng Tin)",
+    "ma_so": "MCĐN",
+    "don_vi": "cái",
+    "don_gia": 24950000.0,
+    "so_luong": 1.0
+  },
+  {
+    "stt": 61,
+    "ten_tai_san": "Máy chiếu đa năng-2013\n(lớp 7B)",
+    "ma_so": "MCĐN2",
+    "don_vi": "cái",
+    "don_gia": 22000000.0,
+    "so_luong": 1.0
+  },
+  {
+    "stt": 62,
+    "ten_tai_san": "Máy chiếu treo tường-2013 (phòng T Anh) ",
+    "ma_so": "MCTT",
+    "don_vi": "cái",
+    "don_gia": 22000000.0,
+    "so_luong": 1.0
+  },
+  {
+    "stt": 63,
+    "ten_tai_san": "Màn hình (máy tính) thứ 2 cho GV-2013 (T Anh)",
+    "ma_so": "MH",
+    "don_vi": "cái",
+    "don_gia": 2900000.0,
+    "so_luong": 1.0
+  },
+  {
+    "stt": 64,
+    "ten_tai_san": "Máy lọc nước-2010",
+    "ma_so": "MLN",
+    "don_vi": "cái",
+    "don_gia": 13750000.0,
+    "so_luong": 2.0
+  },
+  {
+    "stt": 65,
+    "ten_tai_san": "Máy lọc nước-2014",
+    "ma_so": "MLN2",
+    "don_vi": "cái",
+    "don_gia": 25000000.0,
+    "so_luong": 2.0
+  },
+  {
+    "stt": 66,
+    "ten_tai_san": "Máy lọc nước-2013",
+    "ma_so": "MLN3",
+    "don_vi": "cái",
+    "don_gia": 44000000.0,
+    "so_luong": 2.0
+  },
+  {
+    "stt": 67,
+    "ten_tai_san": "Tivi LG 49inch- 2017",
+    "ma_so": "TV2",
+    "don_vi": "cái",
+    "don_gia": 13880000.0,
+    "so_luong": 1.0
+  },
+  {
+    "stt": 68,
+    "ten_tai_san": "Tivi-2010",
+    "ma_so": "TV3",
+    "don_vi": "cái",
+    "don_gia": 9790000.0,
+    "so_luong": 2.0
+  },
+  {
+    "stt": 69,
+    "ten_tai_san": "Bộ đọc và ghi giảng GV (T Anh)-2013",
+    "ma_so": "BĐ",
+    "don_vi": "bộ",
+    "don_gia": 10840000.0,
+    "so_luong": 2.0
+  },
+  {
+    "stt": 70,
+    "ten_tai_san": "Bộ tai nghe-Micro của hs-2013",
+    "ma_so": "BTN",
+    "don_vi": "bộ",
+    "don_gia": 23940000.0,
+    "so_luong": 35.0
+  },
+  {
+    "stt": 71,
+    "ten_tai_san": "Khối điều khiển gv-2013",
+    "ma_so": "KĐK",
+    "don_vi": "bộ",
+    "don_gia": 10395000.0,
+    "so_luong": 1.0
+  },
+  {
+    "stt": 72,
+    "ten_tai_san": "Khối điều khiển hs-2013",
+    "ma_so": "KĐK1",
+    "don_vi": "bộ",
+    "don_gia": 58100000.0,
+    "so_luong": 35.0
+  },
+  {
+    "stt": 73,
+    "ten_tai_san": "Phần mềm hệ thống-2013",
+    "ma_so": "PM",
+    "don_vi": "bộ",
+    "don_gia": 24450000.0,
+    "so_luong": 1.0
+  },
+  {
+    "stt": 74,
+    "ten_tai_san": "Tủ lạnh-2010",
+    "ma_so": "TL",
+    "don_vi": "cái",
+    "don_gia": 4840000.0,
+    "so_luong": 1.0
+  },
+  {
+    "stt": 75,
+    "ten_tai_san": "Ổn áp-2013",
+    "ma_so": "OA",
+    "don_vi": "cái",
+    "don_gia": 2530000.0,
+    "so_luong": ""
+  },
+  {
+    "stt": 76,
+    "ten_tai_san": "Máy bơm PENTEX-2018",
+    "ma_so": "MAYBOM",
+    "don_vi": "cái",
+    "don_gia": 13590000.0,
+    "so_luong": 1.0
+  },
+  {
+    "stt": 77,
+    "ten_tai_san": "Giá đựng sách-2014",
+    "ma_so": "GĐS",
+    "don_vi": "cái",
+    "don_gia": 9800000.0,
+    "so_luong": 5.0
+  },
+  {
+    "stt": 78,
+    "ten_tai_san": "Giá đựng thiết bị tối thiểu-2014 (Vthu, kho, thư viện)",
+    "ma_so": "GĐTB",
+    "don_vi": "cái",
+    "don_gia": 19600000.0,
+    "so_luong": 7.0
+  },
+  {
+    "stt": 79,
+    "ten_tai_san": "Tủ đựng đồ cá nhân -2014",
+    "ma_so": "TDĐ",
+    "don_vi": "cái",
+    "don_gia": 35800000.0,
+    "so_luong": 10.0
+  },
+  {
+    "stt": 80,
+    "ten_tai_san": "Tủ đựng đồ cá nhân -2013",
+    "ma_so": "TDĐ3",
+    "don_vi": "cái",
+    "don_gia": 35550000.0,
+    "so_luong": 10.0
+  },
+  {
+    "stt": 81,
+    "ten_tai_san": "Tủ đựng đồ cá nhân HS",
+    "ma_so": "",
+    "don_vi": "cái",
+    "don_gia": "",
+    "so_luong": ""
+  },
+  {
+    "stt": 82,
+    "ten_tai_san": "Tủ đựng trang phục dân tộc-2014",
+    "ma_so": "TĐPT",
+    "don_vi": "cái",
+    "don_gia": 5600000.0,
+    "so_luong": 1.0
+  },
+  {
+    "stt": 83,
+    "ten_tai_san": "Tủ mục lục-2014",
+    "ma_so": "TML",
+    "don_vi": "cái",
+    "don_gia": 4500000.0,
+    "so_luong": 1.0
+  },
+  {
+    "stt": 84,
+    "ten_tai_san": "Tủ đựng tài liệu-2010 (gỗ)",
+    "ma_so": "TTL",
+    "don_vi": "cái",
+    "don_gia": 5874000.0,
+    "so_luong": 2.0
+  },
+  {
+    "stt": 85,
+    "ten_tai_san": "Thiết bị âm loa - 2020",
+    "ma_so": "",
+    "don_vi": 1.0,
+    "don_gia": "49.680.000",
+    "so_luong": 1.0
+  },
+  {
+    "stt": 86,
+    "ten_tai_san": "Tủ hơi nấu cơm - 2021",
+    "ma_so": "",
+    "don_vi": 1.0,
+    "don_gia": "39.850.000",
+    "so_luong": 1.0
+  },
+  {
+    "stt": 87,
+    "ten_tai_san": "Phần mềm hệ thống-2014",
+    "ma_so": "",
+    "don_vi": 1.0,
+    "don_gia": "37.450.000",
+    "so_luong": 1.0
+  },
+  {
+    "stt": 88,
+    "ten_tai_san": "Phần mềm kế toán - 2014",
+    "ma_so": "",
+    "don_vi": 1.0,
+    "don_gia": "5.000.000",
+    "so_luong": 1.0
+  },
+  {
+    "stt": 89,
+    "ten_tai_san": "Tivi LG 55in ( năm 2023)",
+    "ma_so": "",
+    "don_vi": "",
+    "don_gia": "",
+    "so_luong": ""
+  },
+  {
+    "stt": 90,
+    "ten_tai_san": "Bàn ghế học sinh loại 2 chỗ ghồi",
+    "ma_so": "",
+    "don_vi": "",
+    "don_gia": "",
+    "so_luong": ""
+  },
+  {
+    "stt": 91,
+    "ten_tai_san": " Cửa sắt ký túc xá",
+    "ma_so": "",
+    "don_vi": "bộ",
+    "don_gia": "",
+    "so_luong": ""
+  }
+]
